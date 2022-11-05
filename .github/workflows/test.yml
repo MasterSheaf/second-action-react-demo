@@ -1,21 +1,23 @@
-name: First Workflow
+name: Test Project
 
 # trigger
-on: workflow_dispatch
+on: push
 
 #work to be done
 jobs:
 
-  first-job:
+  test:
   
     #define the runner (environment) we want to run this guy on
     runs-on: ubuntu-latest
     
     steps:
     
-      - name: PrintGreeting
-        run: echo "Hello World"
-      
-      - name: PrintGoodbye
-        run: echo "Done. See ya"
-        
+      # - name: PrintEnvironmentVariables
+      #   run: |
+      #     echo "Environement Vars"
+      #     echo $GITHUB_WORKSPACE
+
+      - name: Get Code
+        uses: actions/checkout@v3
+
