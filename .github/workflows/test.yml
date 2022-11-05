@@ -1,0 +1,21 @@
+name: First Workflow
+
+# trigger
+on: workflow_dispatch
+
+#work to be done
+jobs:
+
+  first-job:
+  
+    #define the runner (environment) we want to run this guy on
+    runs-on: ubuntu-latest
+    
+    steps:
+    
+      - name: PrintGreeting
+        run: echo "Hello World"
+      
+      - name: PrintGoodbye
+        run: echo "Done. See ya"
+        
